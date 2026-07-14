@@ -6,25 +6,25 @@ public class Vacanze {
 
     public void setVacanze() {
         giorniVacanze = new int[6];
-      
-        giorniVacanze[0] = 10; 
-        giorniVacanze[1] = 15; 
+        giorniVacanze[0] = 10;
+        giorniVacanze[1] = 15;
         giorniVacanze[2] = 15;
         giorniVacanze[3] = 15;
-        giorniVacanze[4] = 20; 
+        giorniVacanze[4] = 20;
         giorniVacanze[5] = 20;
     }
 
     public void mostraGiorniVacanze() {
-        int giorni;
-
-        if (anniDiServizio > 5) {
-            giorni = 25;
-            
+        if (anniDiServizio < 0) {
+            System.out.println("Errore: Gli anni di servizio (" + anniDiServizio + ") non possono essere negativi!");
         } else {
-            giorni = giorniVacanze[anniDiServizio];
+            int giorni;
+            if (anniDiServizio > 5) {
+                giorni = 25;
+            } else {
+                giorni = giorniVacanze[anniDiServizio];
+            }
+            System.out.println("Anni di servizio: " + anniDiServizio + " -> Giorni di vacanza spettanti: " + giorni);
         }
-
-        System.out.println("Anni di servizio: " + anniDiServizio + " -> Giorni di vacanza spettanti: " + giorni);
     }
 }
